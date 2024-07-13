@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reddit</title>
+
+    <link href="/static/feed.css" rel="stylesheet" />
+</head>
+
+<body>
+{{range $val := .Posts }}
+<div class="card">
+    <div class="body-area">
+        <div class="top-bar">
+            <div class="top-bar-items">r/{{$val.Subreddit}}</div>
+            <div class="top-bar-items">{{$val.OP}}</div>
+            <span class="top-bar-items">•</span>
+            <div class="top-bar-items">{{formatTime $val.Timestamp}} ago</div>
+        </div>
+        <br>
+        <div class="title">{{$val.Title}}</div>
+
+        {{ $type := typeString $val.Type }}
+        {{ if eq $type "image" }}
+            <img class="main-image" src="{{$val.PostLink}}" />
+
+        {{ else if eq $type "video" }}
+            <video data-dashjs-player src="{{$val.PostLink}}/DASHPlaylist.mpd" controls width="100%">
+                Your browser does not support the video tag.
+            </video>
+
+        {{ else if eq $type "gallery" }}
+            <span>GALLERY</span>
+
+        {{ else if eq $type "link" }}
+            {{ if ne $val.ThumbnailLink "" }}
+            <div class="link-image-container">
+                <a href="{{$val.PostLink}}">
+                    <img class="link-image" src="{{$val.ThumbnailLink}}" />
+                    <div class="link-text">{{$val.PostLink}}</div>
+                </a>
+            </div>
+            {{ else }}
+                <a href="{{$val.PostLink}}">
+                    <div class="link-plain">{{$val.PostLink}}</div>
+                </a>
+            {{ end }}
+
+        {{ end }}
+
+        <div class="bottom-bar">
+            <button class="bottom-bar-button">
+                <img class="up-arrow-icon" src="/static/arrow4.svg" alt="Up Arrow Icon"/>
+                {{$val.Score}}
+                <img class="down-arrow-icon" src="/static/arrow4.svg" alt="Down Arrow Icon" />
+            </button>
+            <a href="{{$val.CommentsLink}}">
+                <button class="bottom-bar-button">
+                    <img class="comment-icon" src="/static/comment.svg" alt="Comment Icon" />
+                    <span>{{$val.CommentCount}} Comments</span>
+                </button>
+            </a>
+        </div>
+    </div>
+</div>
+{{end}}
+
+<div class="footer-bar">
+    <a href="{{.NextPageLink}}">
+        <button class="footer-bar-next-button">
+            <span>Next</span>
+            <img class="right-arrow-icon" src="/static/arrow4.svg" alt="Next Page Icon"/>
+        </button>
+    </a>
+</div>
+
+<script src="/static/v4.7.1_dash.all.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+html {
+    font-family: Bogle, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1;
+    color: #EEEEEE
+}
+
+body {
+    background-color: #030303;
+    margin: 0;
+}
+
+/*****************************************************************************/
+/* Feed posts                                                                */
+/*****************************************************************************/
+.card {
+    margin: 0 auto 15px;
+    background-color: rgb(26, 26, 27);
+}
+
+.top-bar {
+    position: relative;
+    margin: 10px 10px 0 10px;
+    padding: 5px 0 5px 0;
+    font-size: 0.9em;
+    color: rgb(150, 150, 150);
+}
+
+.top-bar-items {
+    float: left;
+    margin-right: 5px;
+}
+
+.title {
+    font-size: 1.5em;
+    margin: 0 10px 10px 10px;
+}
+
+.main-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.link-image-container {
+    position: relative;
+}
+
+.link-image {
+    width: 100%;
+}
+
+.link-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+.link-plain {
+    margin: 0 10px 10px 10px;
+}
+
+.bottom-bar {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: start;
+    column-gap: 10px;
+    padding: 5px;
+}
+
+.bottom-bar-button {
+    background-color: rgb(26, 26, 27);
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.2em;
+    border-radius: 2px;
+    padding: 0px 5px 0px 5px;
+}
+
+.bottom-bar-button:hover {
+    background-color: rgb(100, 100, 100);
+}
+
+.up-arrow-icon {
+    height: 0.8em;
+    transform: rotate(180deg);
+    margin-right: 10px;
+}
+
+.down-arrow-icon {
+    height: 0.8em;
+    margin-left: 10px;
+}
+
+.comment-icon {
+    height: 2em;
+    margin-right: 5px;
+}
+
+/*****************************************************************************/
+/* Footer                                                                    */
+/*****************************************************************************/
+
+.footer-bar {
+    background-color: rgb(26, 26, 27);
+    width: 100%;
+    /*margin: 0 auto 0;*/
+    /*text-align: right;*/
+    display: flex;
+    justify-content: right;
+    padding: 5px;
+}
+
+.footer-bar-next-button {
+    /*float: right;*/
+    /*margin-left: auto;*/
+    background-color: rgb(26, 26, 27);
+    border: none;
+    color: white;
+    /*text-align: center;*/
+    /*text-decoration: none;*/
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.2em;
+    border-radius: 2px;
+    /*padding: 5px;*/
+    margin: 0 10px 0 0;
+    padding: 5px 0px 5px 5px;
+    /*margin: 5px 10px 5px 5px;*/
+}
+
+.footer-bar-next-button:hover {
+    background-color: rgb(100, 100, 100);
+}
+
+.right-arrow-icon {
+    height: 0.6em;
+    transform: rotate(270deg);
+}

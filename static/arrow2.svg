@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg
+    width="800px"
+    height="800px"
+    version="1.1"
+    viewBox="-10 -2 20 25"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+    <path
+        d="M 0 0
+        H 4
+        V 12
+        H 8
+        L 0 20
+        L -8 12
+        H -4
+        V 0
+        Z"
+        stroke="#FFFFFF"
+        stroke-width="1.2"
+        stroke-linejoin="round"
+    />
+</svg>
