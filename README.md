@@ -7,7 +7,7 @@ be manipulated programmatically or re-exported in some other format.
 The application hosts a local HTTP server on `http://localhost:8080` that 
 effectively proxies between the user and (old) Reddit. If the user navigates to
 `http://localhost:8080/r/comics`, the server will download the corresponding 
-page from Reddit (http://old.reddit.com/r/comics) and extract a model from the 
+page from Reddit (`http://old.reddit.com/r/comics`) and extract a model from the 
 page contents using HTTP scraping techniques. The model represents an 
 abstract representation of the page (e.g. a collection of posts, where each 
 post has a title, a timestamp, a score, etc.).
